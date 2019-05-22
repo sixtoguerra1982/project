@@ -1,0 +1,31 @@
+<nav class="navbar navbar-light bg-light justify-content-between">
+  <form class="form-inline">
+    Buscar Proyectos en estado: 
+  <select name="state">
+                <option value=""></option>
+                <option value="propuesta">Propuesta</option>
+                <option value="en progreso">En progreso</option>
+                <option value="terminado">Terminado</option>
+            </select>
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
+</nav>
+<table class="table">
+  <tr>
+    <th>Nombre</th>
+    <th>Estado</th>
+    <th>Descripción</th>
+    <th>Comienzo</th>
+    <th>Fin</th>
+  </tr>    
+  <% @projects.each do |project| %>
+    <tr>
+      <td><%= project.name %> </td>
+      <td><%= project.state %> </td>
+      <td><%= project.description %> </td>
+      <td><%= project.starts_on %> </td>
+      <td><%= project.ends_on %> </td>
+    </tr>
+  <% end %>
+</table>
+<%= link_to "Nuevo Proyecto", projects_new_path%>

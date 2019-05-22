@@ -1,0 +1,14 @@
+<% if @project.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+        El proyecto no pudo ser creado por las siguientes razones:
+    </h2>
+    <ul>
+    <% @project.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+<h1> Projecto creado con éxito </h1>
+<%= link_to "Dashboard", projects_dashboard_path%>

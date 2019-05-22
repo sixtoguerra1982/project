@@ -1,0 +1,14 @@
+<h1> Crear proyecto </h1>
+<%project = Project.new%>
+<form method="get" action="/projects/create">
+    Nombre: <input name="name" />
+    Estado: <select name="state">
+                <option value="propuesta">Propuesta</option>
+                <option value="en progreso">En progreso</option>
+                <option value="terminado">Terminado</option>
+            </select>
+    Descripción: <textarea name="description"></textarea>
+    Comienzo: <input name="starts_on" type="date"/>
+    Fin: <input name="ends_on" type="date"/>
+    <input type="submit" value="Guardar">  
+</form>
